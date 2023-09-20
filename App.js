@@ -36,10 +36,10 @@ function ExpensesOverview() {
       )
     }}
     />
-    <Bottom.Screen name="AllExpenses" component={AllExpenses} options={{
-      title: 'All Expenses',
-      tabBarLabel: 'All Expenses',
-      tabBarIcon: ({color, size}) => (
+    <Bottom.Screen name="AllExpenses" component={AllExpenses} options={{ 
+    title: 'All Expenses', 
+    tabBarLabel: 'All Expenses', 
+    tabBarIcon: ({color, size}) => (
         <Ionicons name="calendar" size={size} color={color} />
       )
       }}
