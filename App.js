@@ -15,13 +15,13 @@ const Stack = createNativeStackNavigator();
 const Bottom = createBottomTabNavigator();
 
 function ExpensesOverview() {
-  return <Bottom.Navigator screenOptions={{
+  return <Bottom.Navigator screenOptions={({ navigation }) => ({
     headerStyle: { backgroundColor: GlobalStyles.colors.primary500 },
     headerTintColor: 'white',
     tabBarStyle: { backgroundColor: GlobalStyles.colors.primary500 },
     tabBarActiveTintColor: GlobalStyles.colors.accent500,
-    headerRight: ({ tintColor }) => <IconButton icon="add" size={30} color={tintColor} onPress={() => {}}/>
-  }}>
+    headerRight: ({ tintColor }) => <IconButton icon="add" size={30} color={tintColor} onPress={() => {navigation.navigate('ManageExpense')}}/>
+  })}>
     <Bottom.Screen name="RecentExpenses" component={RecentExpenses} options={{
       title: 'Recent Expenses',
       tabBarLabel: 'Recent',
