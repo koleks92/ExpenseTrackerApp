@@ -14,13 +14,20 @@ function ManageExpense({ route, navigation }) {
             });
     }, [navigation, isEditing])
 
-    function deleteExpenseHandler() {};
+    function cancelHandler() {
+        console.log("CANCEL");
+    };
 
+    function confirmHandler() {
+        console.log('CONFIRM');
+    };
+
+    function deleteExpenseHandler() {};
     return (
         <View style={styles.container}>
             <View style={styles.buttons}>
-                <Button mode='flat' style={styles.button}>Cancel</Button>
-                <Button style={styles.button}>{isEditing ? 'Update' : 'Add'}</Button>
+                <Button mode='flat' style={styles.button} onPress={cancelHandler}>Cancel</Button>
+                <Button style={styles.button} onPress={confirmHandler}>{isEditing ? 'Update' : 'Add'}</Button>
             </View>
             {isEditing && 
             <View style={styles.deleteContainer}>
