@@ -1,6 +1,6 @@
 import axios from "axios";
 
-const url = 'https://expense-tracker-app-57c7b-default-rtdb.firebaseio.com'
+const url = 'https://expense-tracker-app-57c7b-default-rtdb.firebaseiocom'
 
 export async function storeExpense(expenseData) {
     const response = await axios.post(url + '/expenses.json',
