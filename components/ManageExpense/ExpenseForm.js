@@ -22,6 +22,7 @@ function ExpenseForm() {
             onCHangeText: dateChangeHandler,
         }}/>
         <Input label="Description" textInputConfig={{
+            multiline: true,
             
         }}/>
     </View>
