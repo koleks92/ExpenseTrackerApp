@@ -2,9 +2,11 @@ import axios from "axios";
 
 const url = 'https://expense-tracker-app-57c7b-default-rtdb.firebaseio.com'
 
-export function storeExpense(expenseData) {
-    axios.post(url + '/expenses.json',
+export async function storeExpense(expenseData) {
+    const response = await axios.post(url + '/expenses.json',
     expenseData);
+    const id = response.data.name;
+    return id;
 };
 
 export async function fetchExpenses() {
@@ -24,3 +26,10 @@ export async function fetchExpenses() {
     return expenses;
 }
 
+export async function updateExpense(id, expenseData) {
+    return axios.put(url + `/expenses/${id}.json`, expenseData);
+};
+
+export async function deleteExpense(id) {
+    return axios.delete(url + `/expenses/${id}.json`);
+};
