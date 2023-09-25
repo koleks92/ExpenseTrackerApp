@@ -1,5 +1,4 @@
-import { View, Text, StyleSheet } from 'react-native';
-import { TextInput } from 'react-native-gesture-handler';
+import { View, Text, TextInput, StyleSheet } from 'react-native';
 
 function Input({label, textInputConfig}) {
     return (
